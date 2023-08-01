@@ -1,7 +1,6 @@
 import SlimSelect from "slim-select";
 import { fetchBreeds, fetchCatByBreed } from "./cat-api.js";
 import Notiflix from "notiflix"
-// import { refs } from "./cat-api.js";
 import '/node_modules/slim-select/dist/slimselect.css';
 
 const refs = {
@@ -59,7 +58,6 @@ const makeElem = ({ url, name, description, temperament }) => {
             <p class="description">${description}</p>
             <p class="temperament">${temperament}</p>`
     refs.cardCat.innerHTML = card
-    // refs.loadingInProgress.classList.add("is-hidden")
     refs.cardCat.classList.remove("is-hidden")
 }
 
