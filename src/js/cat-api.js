@@ -1,7 +1,4 @@
-import Notiflix from "notiflix"
-
 const BASE_URL = "https://api.thecatapi.com"
-
 const API_KEY = "live_wCfT5v0PWTplOiEB5XRfhZ2zfiCO2uEWJJyt9As1ajDN4YflBYPCsOYzgvezKYDC"
 
 export function fetchBreeds() {
@@ -11,15 +8,7 @@ export function fetchBreeds() {
         if (!res.ok) { throw new Error(res.status)
     }
         return res.json()
-    }).then(data => {
-        return data.map(({ id, name }) => ({
-            value: id,
-            label: name,
-        }))
-    }).catch(() => {
-        Notiflix.Notify.failure("Oops! Something went wrong! Try reloading the page!")
-    })
-  
+    })  
 }
 
 export function fetchCatByBreed(breedId) {
@@ -30,7 +19,5 @@ export function fetchCatByBreed(breedId) {
             throw new Error(res.status)
         }
         return res.json()
-    }).catch(() => {
-        Notiflix.Notify.failure("Oops! Something went wrong! Try reloading the page!")
     })
 }

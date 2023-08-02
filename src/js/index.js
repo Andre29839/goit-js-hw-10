@@ -13,7 +13,11 @@ const refs = {
 
 fetchBreeds().then(data => {
     refs.select.insertAdjacentHTML("beforeend", `<option value ="null" selected>Please select the breed</option>`)
-    data.forEach(e => {
+    
+    data.map(({ id, name }) => ({
+            value: id,
+            label: name,
+        })).forEach(e => {
         refs.select.insertAdjacentHTML("beforeend", `<option value = "${e.value}">${e.label}</option>`)
         refs.select.classList.remove("is-hidden")
     })
